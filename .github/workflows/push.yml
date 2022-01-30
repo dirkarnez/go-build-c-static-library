@@ -15,13 +15,9 @@ jobs:
       
       - run: go build -o .\sum\ -buildmode=c-archive sum.go
       
-      - name: dir
-        shell: cmd
-        run: dir && cd sum && dir
-      
       - name: cmake
         shell: cmd
-        run: cmake.exe -G"MinGW Makefiles" -DSUM_ROOT="%~dp0sum" -B./build
+        run: cmake.exe -G"MinGW Makefiles" -DSUM_ROOT="./sum" -B./build
 
       - name: mingw make 
         shell: cmd
