@@ -4,10 +4,12 @@
 // 	return a + b
 // }
 
-package sum
+package main
 
 import "fmt"
 import "C"
+
+func main() {}
 
 //export Sum
 func Sum(a, b int) int {
