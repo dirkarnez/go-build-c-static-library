@@ -13,7 +13,7 @@ jobs:
           
       - run: go get .
       
-      - run: go build -o .\sum\ -buildmode=c-archive sum.go
+      - run: go build -o sum\ -buildmode=c-archive sum.go
       
       - name: cmake
         shell: cmd
