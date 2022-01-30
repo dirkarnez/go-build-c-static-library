@@ -1,2 +1,2 @@
-go-build-c-static-library
-=========================
+go-build-c-static-library-boilerplate
+=====================================
