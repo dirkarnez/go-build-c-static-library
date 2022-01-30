@@ -2,7 +2,7 @@ name: golang-build-actions-workflow
 on: push
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
       
@@ -13,11 +13,17 @@ jobs:
           
       - run: go get .
       
-      - run: go build -buildmode=archive sum.go
+      - run: go build -o .\sum\ -buildmode=c-archive sum.go
       
-      - run: ls
+      - name: cmake
+        shell: cmd
+        run: cmake.exe -G"MinGW Makefiles" -DSUM_ROOT="%~dp0sum" -B./build
+
+      - name: mingw make 
+        shell: cmd
+        run: cd build && mingw32-make
       
-#       - uses: actions/upload-artifact@v2
-#         with:
-#           name: url-files-to-markdown
-#           path: url-files-to-markdown.exe
+      - uses: actions/upload-artifact@v2
+        with:
+          name: go-build-c-static-library
+          path: go-build-c-static-library.exe
