@@ -25,5 +25,5 @@ jobs:
       
       - uses: actions/upload-artifact@v2
         with:
-          name: go-build-c-static-library-boilerplate
-          path: build\go-build-c-static-library-boilerplate.exe
+          name: sumcpp
+          path: build\sumcpp.exe
