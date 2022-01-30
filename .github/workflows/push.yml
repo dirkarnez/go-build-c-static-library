@@ -26,4 +26,4 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: go-build-c-static-library-boilerplate
-          path: go-build-c-static-library-boilerplate.exe
+          path: build\go-build-c-static-library-boilerplate.exe
